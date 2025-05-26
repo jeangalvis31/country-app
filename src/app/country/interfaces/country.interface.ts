@@ -3,6 +3,8 @@ export interface Country {
     flag: string,
     flagSvg: string,
     name: string,
-    capital: string,
-    population: number
+    capital: string[],
+    population: number,
+    region: string,
+    subRegion: string
 }
