@@ -1,3 +1,5 @@
-<app-country-search-input placeholder="Buscar por Pais"></app-country-search-input>
+<app-country-search-input (value)="onSearch($event)" placeholder="Buscar por Pais"></app-country-search-input>
 
-<app-country-list></app-country-list>
+
+<app-country-list [countries]="countries()"></app-country-list>
+

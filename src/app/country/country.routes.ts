@@ -3,7 +3,8 @@ import { ByCapitalPageComponent } from './pages/by-capital-page/by-capital-page.
 import { CoyntryLayoutComponent } from './layouts/CoyntryLayout/CoyntryLayout.component';
 import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.component';
 import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
-import { CountryPageComponent } from './pages/CountryPage/CountryPage.component';
+import { CountryPageComponent } from './pages/CountryPage/CountryPage/CountryPage.component';
+
 
 export const countryRoutes: Routes = [
     {
