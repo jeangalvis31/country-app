@@ -1,4 +1,4 @@
-import { Component, effect, input, output, signal } from '@angular/core';
+import { Component, effect, input, linkedSignal, output, signal } from '@angular/core';
 
 @Component({
     selector: 'app-country-search-input',
@@ -9,7 +9,12 @@ export class CountrySearchInputComponent {
   placeholder = input('Buscar');
   value=output<string>();
 
-  inputValue = signal<string>('');
+  
+  initialValue = input<string>();
+
+
+  inputValue = linkedSignal<string>(() => this.initialValue() ?? '');
+  
 
   debounceEffect = effect((onCleanup) => {
     const value = this.inputValue();

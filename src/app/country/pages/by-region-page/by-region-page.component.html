@@ -5,16 +5,21 @@
 <section class="row mt-2">
     <div class="flex">
         @for (region of regions; track region) {
-            <button [class.border-orange-500]="selectedRegion() == region" (click)="selectRegion(region)" class="btn btn-outline border-green-500 text-white font-bold w-[100px] mr-2">{{region}}</button>
+        <button (click)="selectedRegion.set(region)" [ngClass]="{
+            'btn': true,
+            'btn-outline': true,
+            'font-bold': true,
+            'w-[100px]': true,
+            'mr-2': true,
+            'border-orange-500 text-orange-500': selectedRegion() === region
+        }">
+            {{ region }}
+        </button>
         }
     </div>
 </section>
 
 
-<!-- <app-country-list 
-[errorMessage]="countryResource.error()" 
-[countries]="countryResource.value() ?? []"
-[isEmpty]="countryResource.value()?.length == 0"
-[isLoading]="countryResource.isLoading()"
->
-</app-country-list> -->
+<app-country-list [errorMessage]="countryResource.error()" [countries]="countryResource.value() ?? []"
+    [isEmpty]="countryResource.value()?.length == 0" [isLoading]="countryResource.isLoading()">
+</app-country-list>
